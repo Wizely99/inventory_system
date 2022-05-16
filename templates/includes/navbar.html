@@ -1,0 +1,40 @@
+<nav>
+    <div class="sidebar-logo">
+        <i class="fa fa-meetup sidebar-logo-img fa-5x" aria-hidden="true"></i>
+    </div>
+    <div class="sidebar-user">
+        <img id="admin_pic" src="{{user.profile_pic.url}}.jpg" alt="profile picture" class="admin-pic">
+        <div class="admin-name">
+            <a id="admin_name" href="">{{user}}</a>
+        </div>
+       
+    </div>
+
+    <div class="sidebar-container">
+        <ul>
+            <li id="dashboardSelect">
+                <a href="">
+                    <i class='bx bx-grid-alt nav__icon' ></i>
+                    <span>dashboard</span></a></li>
+         
+                <li id='add_patient'><a href=" {% url 'add_patient' %}  ">
+                    <i class="fa fa-plus-square" aria-hidden="true"></i><span>Add patient</span></a>
+                </li>
+            </li>
+            <li id="staffLi"><a href=""><i class="fa-solid fa-user"></i><span>Staff</span></a>
+            
+            <li id="messageLi"><a class="notification" href=""><span class="notification-badge"></span><i class="fa fa-inbox" aria-hidden="true"></i><span>inbox</span></a></li>
+            <li class='collapse-wrap'><a href=""><i class="fa fa-cog" aria-hidden="true"></i><span>setting</span><i class="fa-solid fa-circle-chevron-down"></i></a>
+                <ul class="'hideDropdown" >
+                    <li class="darkmode-toggle" id="darkmode-toggle"><a href=""><span>dark mode</span><span
+                                class="darkmode-switch" id="darkmode-switch"></span></a></li>
+                </ul>
+            </li>
+            <li class='logout' id="logOut"><a href="{% url 'logout'%} "><i class="fas  fa-sign-out-alt  fas-small"></i><span>Log out</span></a>
+
+            </li>
+
+        </ul>
+    </div>
+
+</nav>

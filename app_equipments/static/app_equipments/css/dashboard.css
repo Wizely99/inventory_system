@@ -1,0 +1,236 @@
+:root {
+    --body-bg: #fafafb;
+    --box-bg: ffffff;
+    --main-color: #0652dd;
+    --text-color: #455560;
+    --border-color: #e9e9e9;
+    --menu-item-active-bg: rgba(62, 121, 247, 0.1);
+    --label-text-size: 1.3rem;
+    --input-text-size: 1rem;
+    --padding-box: 1rem;
+    --padding-box-small: 0.5rem;
+    --secondary-color: #ff0000;
+    --main-header-height: 80px;
+    --box-border-radius: 15px;
+    --sidebar-size: 20%;
+    --sidebar-logo-img-size: 45px;
+    --profile-img-size: 45px;
+    --shadow: 0 1px 4px -1px rgb(0 0 0 / 15%);
+    --card-shadow: -.2rem -.2rem rgba(179, 174, 174, 0.07), .2rem .2rem rgba(164, 156, 156, 0.07);
+    --darkmode-toggle-size: 20px;
+    --darkmode-toggle-index-before: 200;
+    --darkmode-toggle-index-after: -100;
+    --toggle-color: #000;
+    --toggle-color-content: #fff;
+    --hover-color: var(--secondary-color);
+}
+
+.dark {
+    transition: all .5s ease-in-out;
+    --body-bg: #000;
+    --text-color: var(--secondary-color);
+    --border-color: #b9b9b9;
+    --card-shadow: -.2rem -.3rem rgb(138, 133, 133), .2rem .3rem rgb(99, 98, 98);
+    --darkmode-toggle-index-before: -300;
+    --darkmode-toggle-index-after: 10000;
+    --toggle-color: #fff;
+    --toggle-color-content: #000;
+    --border-color: #222;
+    --messageDivs-color: #121212;
+    --messageDiv-color: #272727;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+
+/* dashboard card css */
+
+.card-holder {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.header {
+    text-transform: uppercase;
+    color: var(--text-color);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+
+.dashboard-header {
+    font-size: 2rem;
+}
+
+.equipment-header {
+    font-size: 2rem;
+    margin: .5rem 0;
+    margin-left: 7rem;
+
+}
+
+.card {
+    width: clamp(200px, 25vw, 260px);
+    box-shadow: var(--card-shadow);
+    border-radius: 10%;
+    padding: 20px;
+    margin: 1rem;
+}
+
+.card>* {
+    text-align: center;
+    font-size: 1.4rem;
+    display: block;
+    text-transform: capitalize;
+}
+
+span {
+    display: block;
+}
+
+input {
+    width: 100%;
+
+    text-align: center;
+    background-color: transparent;
+    font-size: 2rem;
+    color: var(--main-color);
+    border: none;
+    margin: 0.5rem 0;
+}
+
+.card-wrapper i {
+    font-size: 4rem !important;
+    margin: 0.5rem;
+    color: var(--main-color);
+
+
+}
+
+
+.card-wrapper {
+    /* background-color: var(--main-color); */
+    position: absolute;
+    left: var(--sidebar-size);
+    width: calc(100% - var(--sidebar-size));
+}
+
+
+
+
+
+
+/* sidebar css styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-size);
+    height: 100vh;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    border-right: 2px solid var(--border-color);
+}
+
+nav ul {
+    display: grid;
+    grid-gap: .7rem;
+}
+
+nav ul ul {
+    /* display: none; */
+    transition: all 1s ease-in-out;
+}
+
+nav ul ul li {
+    font-size: 0.9rem;
+    padding-left: 1rem;
+    transition: all 1s ease-in-out;
+}
+
+nav li {
+    /* display: flex; */
+    /* flex-direction: row; */
+    gap: 1rem;
+    text-transform: capitalize;
+}
+
+nav li span {
+    margin: 0 .1rem;
+}
+
+nav * {
+    color: var(--main-color);
+    transition: all 0.3s ease-in-out;
+}
+
+nav *:hover {
+    color: var(--hover-color);
+}
+
+nav i {
+    font-size: 1.2rem;
+    display: inline;
+}
+
+/* dropdown arrow css design */
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.admin-name {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.admin-pic {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.sidebar-container {
+    padding-left: 0.4rem;
+}
+
+.btn-logout {
+    padding: 0.5rem;
+}
+
+.container-blur {
+    filter: blur(20px);
+    pointer-events: none;
+    /* overflow: hidden; */
+}
+
+
+i.fa-sign-out-alt {
+    /* outline:2px solid var(--main-color); */
+    padding: 4px;
+    border-radius: 10px;
+    margin: 0;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+
+.fas-small {
+    font-size: 1rem !important;
+    padding: 2px !important;
+    outline: none !important;
+}

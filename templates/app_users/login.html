@@ -1,0 +1,47 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'app_equipments/css/add_equipment.css' %}">
+
+{% endblock css %}
+{% block title %}
+<title>login-form</title>
+
+{% endblock title %}
+{% block body %}
+
+<section style="width:50%" id="loginSection">
+    <h1 id="loginHead">Welcome</h1>
+    <div class="sidebar-logo">
+        <i class="fa fa-meetup sidebar-logo-img fa-5x" aria-hidden="true"></i>
+    </div>
+    <div class="login-form">
+        <form action="{% url 'login' %}" method='POST' id="loginForm">
+            {% csrf_token %}
+            <label for="username">username</label>
+            <input type="text" name="username" id="loginUsername" placeholder="👤">
+            <label for="password">password</label>
+            <input type="password" name="password" id="loginPassword" placeholder="🔒">
+            <div class="formBtn">
+                <button type="submit" id="loginSectionBtn" class="loginBtn">Login</button>
+
+            </div>
+            <p>Don't have an account? <a class='loginout' href='{% url 'signup' %}' id='signupDirectSectionBtn'>Sign Up</a></p>
+        </form>
+    </div>
+</section>
+{% endblock body %}
+
+{% block script %}
+<script type="text/javascript"  src="{% static 'app_users/js/login.js' %}"></script>
+{% endblock script %}
+{% comment %}
+
+<body style="background-color: #112849;">
+
+
+    <script type="text/javascript" src="login.js"></script>
+</body>
+
+</html> {% endcomment %}

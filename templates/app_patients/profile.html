@@ -1,0 +1,61 @@
+{% extends '../layout.html' %}
+{% block body %}
+
+
+<table  class="table-bordered  table table-striped  table-hover">
+    <thead>
+        <tr>
+            <td>Property
+
+            </td>
+            <td>
+                value
+                
+            </td>
+            <td>
+                action
+            </td>
+        </tr>
+    </thead>
+{% for key,values in new_data.items %}
+
+
+    <tbody>
+        <tr>
+            <td>
+                <label for="{{key}}" class='form-label'>{{key}}:
+    
+            </td>
+            <td>
+                <input type="text" name={{key}} class="form-input" value={{values}}  id="{{key}}">
+    
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary btn-edit" id='id_{{key}}'>edit</button>
+    
+            </td>
+        </tr>
+    </tbody>
+
+
+
+
+
+{% endfor %} 
+</table>
+
+
+<li class='logout' id="logOut"><a href="{% url 'logout'%} "><i class="fas  fa-sign-out-alt  fas-small"></i><span>Log out</span></a>
+
+
+
+<form action="  {% url 'update_info'}" method="post">
+        
+
+     
+         <button type="submit" class="btn  btn-success">Update</button>
+</form>
+
+
+
+{% endblock body %}

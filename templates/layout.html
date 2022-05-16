@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static '/fontawesome-free-6.0.0-web/css/all.css' %}">
+        <link rel="stylesheet" href="{% static '/fontawesome-free-6.0.0-web/css/brands.css' %}">
+        <link rel="stylesheet" href="{% static '/fontawesome-free-6.0.0-web/css/fontawesome.css' %}">
+        <link rel="stylesheet" href="{% static '/fontawesome-free-6.0.0-web/css/v4-shims.css' %}">
+        <link rel="stylesheet" href="{% static '/fontawesome-free-6.0.0-web/css/fontawesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'app_users/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'app_equipments/css/add_equipment.css' %}">
+        <link rel="stylesheet" href="{% static '/app_users/css/my_snippet.css' %}">
+
+        {% block css %}
+
+
+        {% endblock css %}
+        {% block title %}
+        <title>Home</title>
+        {% endblock title %}
+    </head>
+
+    <body>
+        {% include 'includes/messages.html' %}
+        {% block body %}block body{% endblock body %}
+        {% block script %}
+        {% endblock script %}
+    </body>
+
+</html>

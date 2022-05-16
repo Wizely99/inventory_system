@@ -1,0 +1,99 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block css %}
+
+<!-- google font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Gabriela&family=IBM+Plex+Sans+Thai+Looped:wght@700&family=Montserrat+Alternates:wght@100&family=Montserrat:wght@900&family=Rowdies:wght@300&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" href="{% static 'app_equipments/css/dashboard.css' %}">
+
+
+<!-- ===== BOX ICONS ===== -->
+<link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+{% endblock css %}
+
+
+{% block body %}
+
+{% include 'includes/navbar.html' %}
+
+<div class="card-wrapper">
+    <div class="header dashboard-header">
+        <span>
+            <i class="fa fa-spinner fa-spin fa-1x fa-fw"></i>
+        </span>
+        <span>
+            Dashboard
+        </span>
+    </div>
+
+    <div class="card-holder">
+        <div class="card">
+            <div class="text">
+                <span>all</span>
+                <input type="number" value='0' disabled id='all'>
+            </div>
+            <div class="icon">
+                <i id="all" class='bx bx-bar-chart-alt-2 nav__icon'></i>
+            </div>
+
+        </div>
+        <div class="card">
+            <div class="text">
+                <span>available</span>
+                <input type="number" value='0' disabled id='available'>
+            </div>
+            <div class="icon">
+                <i id="available" class="fa-solid fa-chart-line"></i>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <div class="text">
+                <span>faulty</span>
+                <input type="number" value='0' disabled id='faulty'>
+            </div>
+            <div class="icon">
+                <i id="faulty" class="fa  fa-ban" style="color:red" aria-hidden="true"></i>
+            </div>
+
+        </div>
+    </div>
+    <div class=" header equipment-header">
+        <span>department</span>
+    </div>
+    <div class=" card-holder subjects-card-holder">
+
+        {% for department in departments %}
+        {% for key,value in department.items %}
+        <div class="card">
+            <div class="text">
+                <label for='{{ key }}'>{{ key }}</label>
+                <input name='{{ key }}' type="number" value='{{ value.0 }}' disabled id='{{ key }}'>
+            </div>
+            <div class="icon">
+                <i id='id_{{ key }}' class="{{ value.1 }}"></i>
+            </div>
+
+        </div>
+        {% endfor %}
+
+        {% endfor %}
+
+
+
+
+    </div>
+
+</div>
+</main>
+
+{% endblock body %}
+{% block script %}
+<script src={% static 'app_equipments/js/dashboard.js'%}></script>
+{% endblock script %}

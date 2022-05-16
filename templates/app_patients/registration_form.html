@@ -1,0 +1,22 @@
+{% extends '../layout.html' %}
+{% load static %}
+
+{% block body %}
+<form id='add-patient-form' action="{% url 'add_patient' %}  " method="post">
+    <h1>Register Equipment</h1>
+    <div class="sidebar-logo">
+        <i class="fa fa-meetup sidebar-logo-img fa-5x" aria-hidden="true"></i>
+    </div>
+    {% csrf_token %}
+    <div class="form">
+        {{ form.as_p }}
+        <div class="formBtn">
+            <button type="submit" id="submitBtn">Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock body %}
+{% block script %}
+{% comment %} <script type="text/javascript" src="{% static 'app_equipments/js/add_equipment.js' %}"></script> {% endcomment %}
+
+{% endblock script %}
